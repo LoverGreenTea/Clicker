@@ -9,13 +9,16 @@
         Label:
             text: "тест"
     FloatLayout:
-        source: ""
-        size_hint": 0.1, 0.25
-        pos_hint: {"center_x:0, cenceter_y: 0,25"}
-        allow_stretch: True
-        keep_ratio: False
+        Image:
+            source: ""
+            size_hint: 0.1, 0.25
+            pos_hint: {"center_x:0, cenceter_y: 0,25"}
+            allow_stretch: True
+            keep_ratio: False
         Button:
-            size_hint:
+            size_hint: 0, 0
+            pos_hint: {"center_x:0, cenceter_y: 0,25"}
+            background: 0, 0, 0, 0.7
             text: "тест"
         Button:
             text: "Shop"
