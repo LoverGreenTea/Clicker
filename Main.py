@@ -28,9 +28,8 @@ class GamePlayWindow(Screen):
             super().__init__(**kw)
 
 def click(self):
-    score = int(self.ids.score_lbl.text)
-    score += 1
-    self.ids.score_lbl.text = str(score)
+    player_data['score'] += 1
+    self.ids.score_lbl.text = str(player_data['score'])
     self.ids.ClickerIcon.img.size_hint = (0.5, 0.5)
 class MyApp(App):
     def build(self):
