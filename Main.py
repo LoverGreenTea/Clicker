@@ -14,7 +14,7 @@ def read_data():
         with open("play.json", "r", encoding="utf-8") as file:
             player_data = json.load(file)
     except:
-        print("")
+        print("Ха - ні")
 
 def save_data():
     global player_data
@@ -22,10 +22,10 @@ def save_data():
         with open("play.json", "w", encoding="utf-8") as file:
             json.dump(player_data, file, indent=4, ensure_ascii=True)
     except:
-        print("")
+        print("Ха - ні")
 def on_enter(self, *args):
     read_data()
-    self.ids.score_lbl.text = str(player_data['scoree'])
+    self.ids.score_lbl.text = str(player_data['score'])
 class GamePlayWindow(Screen):
     def __init__(self, **kw):
             super().__init__(**kw)
@@ -33,7 +33,7 @@ class GamePlayWindow(Screen):
 def click(self):
     player_data['score'] += 1
     self.ids.score_lbl.text = str(player_data['score'])
-    self.ids.ClickerIcon.img.size_hint = (0.5, 0.5)
+    self.ids.ClickerIcon.png.size_hint = (0.1, 0.1)
     save_data()
 class MyApp(App):
     def build(self):
