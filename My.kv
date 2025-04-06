@@ -8,17 +8,20 @@
         orientation: "vertical"
         Label:
             text: "тест"
-    FloatLayout:
-        Image:
-            source: ""
-            size_hint: 0.1, 0.25
-            pos_hint: {"center_x:0, cenceter_y: 0,25"}
-            allow_stretch: True
-            keep_ratio: False
-        Button:
-            size_hint: 0, 0
-            pos_hint: {"center_x:0, cenceter_y: 0,25"}
-            background: 0, 0, 0, 0.7
-            text: "тест"
+            id:score_lbl
+        FloatLayout:
+            Image:
+                source: "ClickerIcon.png"
+                size_hint: 0.1, 0.25
+                pos_hint: {"center_x": 0.5, "center_y": 0.25}
+                allow_stretch: True
+                keep_ratio: False
+                id: ClickerIcon_img
+            Button:
+                size_hint: 0.4, 0.9
+                pos_hint: {"center_x": 0.5, "center_y": 0.25}
+                background: 0, 0, 0, 0.1
+                text: "тест"
+                id: ClickerIcon_img
         Button:
             text: "Shop"
