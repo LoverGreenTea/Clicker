@@ -35,11 +35,11 @@ class GamePlayWindow(Screen):
 def click(self):
     player_data['score'] += 1
     self.ids.score_lbl.text = str(player_data['score'])
-    self.ids.ClickerIcon.png.size_hint = (0.1, 0.1)
+    self.ids.ClickerIcon.png.size_hint = (0.5, 1.3)
     save_data()
 
 def un_click(self):
-        self.ids.ClickerIcon.png.size_hint = (0.1, 0.1)
+        self.ids.ClickerIcon.png.size_hint = (0.4, 1)
 
 class MyApp(App):
     def build(self):
