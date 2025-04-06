@@ -3,7 +3,24 @@ import json
 from kivy.app import App
 from kivy.uix.screenmanager import Screen, ScreenManager
 
-player_data = {}
+player_data = {
+    "score": 0,
+    "power": 1
+}
+
+def read_data():
+    global player_data
+    try:
+        with open("play.json", "r", encoding="utf-8") as file:
+            player_data = json.load(file)
+    except:
+        print("")
+
+def save_data():
+    global player_data
+    try:
+        with open("play.json", "w", encoding="utf-8") as file
+            json.dump(player_data, file, indent=4, ensure_ascii=True)
 class GamePlayWindow(Screen):
     def __init__(self, **kw):
             super().__init__(**kw)
