@@ -13,6 +13,7 @@ def read_data():
     try:
         with open("play.json", "r", encoding="utf-8") as file:
             player_data = json.load(file)
+
     except:
         print("Ха - ні")
 
@@ -21,6 +22,7 @@ def save_data():
     try:
         with open("play.json", "w", encoding="utf-8") as file:
             json.dump(player_data, file, indent=4, ensure_ascii=True)
+
     except:
         print("Ха - ні")
 def on_enter(self, *args):
@@ -35,6 +37,10 @@ def click(self):
     self.ids.score_lbl.text = str(player_data['score'])
     self.ids.ClickerIcon.png.size_hint = (0.1, 0.1)
     save_data()
+
+def un_click(self):
+        self.ids.ClickerIcon.png.size_hint = (0.1, 0.1)
+
 class MyApp(App):
     def build(self):
         sm = ScreenManager()
