@@ -19,8 +19,10 @@ def read_data():
 def save_data():
     global player_data
     try:
-        with open("play.json", "w", encoding="utf-8") as file
+        with open("play.json", "w", encoding="utf-8") as file:
             json.dump(player_data, file, indent=4, ensure_ascii=True)
+    except:
+        print("")
 class GamePlayWindow(Screen):
     def __init__(self, **kw):
             super().__init__(**kw)
