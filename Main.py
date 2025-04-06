@@ -23,6 +23,9 @@ def save_data():
             json.dump(player_data, file, indent=4, ensure_ascii=True)
     except:
         print("")
+def on_enter(self, *args):
+    read_data()
+    self.ids.score_lbl.text = str(player_data['scoree'])
 class GamePlayWindow(Screen):
     def __init__(self, **kw):
             super().__init__(**kw)
@@ -31,6 +34,7 @@ def click(self):
     player_data['score'] += 1
     self.ids.score_lbl.text = str(player_data['score'])
     self.ids.ClickerIcon.img.size_hint = (0.5, 0.5)
+    save_data()
 class MyApp(App):
     def build(self):
         sm = ScreenManager()
