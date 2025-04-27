@@ -1,28 +1,90 @@
 <GamePlayWindow>:
-    FloatLayout:
+    FloatLayout
         Image:
-            source: "126-scaled-e1730107803778.jpg"
+            source: "wall.jpg"
             allow_stretch: True
             keep_ratio: False
-    BoxLayout:
-        orientation: "vertical"
-        Label:
-            color: "black"
-            text: "0"
-            id: score_lbl
-        FloatLayout:
-            Image:
-                source: "ClickerIcon.png"
-                size_hint: 0.4, 1
-                pos_hint: {"center_x": 0.5, "center_y": 0.35}
-                allow_stretch: True
-                keep_ratio: False
-                id: ClickerIcon_img
+        BoxLayout:
+            orientation: "vertical"
+            Label:
+                text: "0"
+                id: score_lbl
+            FloatLayout:
+                Image:
+                    source: "ClickerIcon.png"
+                    size_hint: 0.5, 0.5
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5 }
+                    allow_stretch: True
+                    keep_ratio: False
+                    id: ClickerIcon
+                Button:
+                    size_hint: 0.5, 0.5
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5 }
+                    background_color: 0,0,0, 0.5
+                    on_press: root.click()
+                    on_release: root.unclick()
             Button:
-                size_hint: 0.4, 0.9
-                pos_hint: {"center_x": 0.5, "center_y": 0.25}
+                text: "Магазин"
+                size_hint: 0.25, 0.5
+                pos_hint: {"center_x": 0.5, "center_y": 0.5 }
                 background_color: 0,0,0, 0.5
-                text: ""
-                id: ClickerIcon_img
-        Button:
-            text: "Shop"
+                on_press: root.GoToSHOP
+
+
+<ShopWindow>:
+    FloatLayout
+        Image:
+            source: "wall.jpg"
+            allow_stretch: True
+            keep_ratio: False
+        BoxLayout:
+            orientation: "vertical"
+            BoxLayout
+                orientation: "horizontal"
+                size_hint: 1, 0.2
+                Button:
+                    text: "назад"
+
+                Label:
+                    text: "0"
+                    id: score_lbl
+            ScrollView:
+                size_hint_y: None
+                size_hint: 1, 1
+                GridLayout:
+                    size_hint_y: None
+                    id: shop_items
+                    cols: 1
+                    row_default_height: 100
+                    FloatLayout:
+                        Button:
+                            size_hint: 1, 1
+                            pos_hint: {"center_x": 0.5, "center_y": 0.5 }
+                        Image:
+                            size_hint: 0.1, 1
+                            source: "ClickerIcon.png"
+                            pos_hint: {"x": 0, "center_y": 0.5 }
+                        Label:
+                            text: "+10"
+                            size_hint: 0.1, 1
+                            pos_hint: {"x": 0.5, "center_y": 0.5 }
+                        Label:
+                            text: "100"
+                            size_hint: 0.1, 1
+                            pos_hint: {"x": 0.8, "center_y": 0.5 }
+                    FloatLayout:
+                        Button:
+                            size_hint: 1, 1
+                            pos_hint: {"center_x": 0.5, "center_y": 0.5 }
+                        Image:
+                            size_hint: 0.1, 1
+                            source: "ClickerIcon.png"
+                            pos_hint: {"x": 0, "center_y": 0.5 }
+                        Label:
+                            text: "+10"
+                            size_hint: 0.1, 1
+                            pos_hint: {"x": 0.5, "center_y": 0.5 }
+                        Label:
+                            text: "100"
+                            size_hint: 0.1, 1
+                            pos_hint: {"x": 0.8, "center_y": 0.5 }
