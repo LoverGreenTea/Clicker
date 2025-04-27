@@ -47,7 +47,6 @@ class ShopWindow(Screen):
         super().__init__(**kw)
 
     def buy(self, price, bonus):
-        save_data()
         if player_data['score'] >= price:
             player_data['score'] -= price
             player_data['power'] += bonus
