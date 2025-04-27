@@ -38,7 +38,7 @@ class GamePlayWindow(Screen):
         save_data()
 
     def un_click(self):
-            self.ids.ClickerIcon.png.size_hint = (0.4, 1)
+            self.ids.ClickerIcon_png.size_hint = (0.4, 1)
 
     def GoToSHOP(self):
         self.manager.current = "shop"
