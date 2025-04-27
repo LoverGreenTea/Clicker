@@ -52,6 +52,9 @@ class ShopWindow(Screen):
             player_data['score'] -= price
             player_data['power'] += bonus
         save_data()
+
+    def BackToGame(self):
+        self.manager.current = "game_play_window"
 class MyApp(App):
     def build(self):
         sm = ScreenManager()
