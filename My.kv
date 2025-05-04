@@ -1,3 +1,23 @@
+<Menu>:
+    FloatLayout
+        Image:
+            source: "wall.jpg"
+            allow_stretch: True
+            keep_ratio: False
+        BoxLayout:
+            orientation: "vertical"
+            BoxLayout
+                orientation: "horizontal"
+                size_hint: 1, 0.2
+                Button:
+                    text: "назад"
+                    on_press: root.BackToGame()
+                Image:
+                    size_hint: 0.1, 1
+                    source: ""
+                    pos_hint: {"x": 0, "center_y": 0.5 }
+
+
 <GamePlayWindow>:
     FloatLayout
         Image:
@@ -89,3 +109,4 @@
                             text: "100"
                             size_hint: 0.1, 1
                             pos_hint: {"x": 0.8, "center_y": 0.5 }
+

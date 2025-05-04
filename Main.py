@@ -54,9 +54,18 @@ class ShopWindow(Screen):
 
     def BackToGame(self):
         self.manager.current = "game_play_window"
+
+class Menu(Screen):
+    def __init__(self, **kw):
+        super().__init__(**kw)
+
+    def BackToGame(self):
+        self.manager.current = "game_play_window"
+
 class MyApp(App):
     def build(self):
         sm = ScreenManager()
+        sm.add_widget(GamePlayWindow(name="menu"))
         sm.add_widget(GamePlayWindow(name="game_play_window"))
         sm.add_widget(ShopWindow(name="shop"))
         return sm
